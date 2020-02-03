@@ -254,6 +254,7 @@
           <entityPackageName>entity</entityPackageName>
           <dataDirectory>src/test/resources/data/postgres</dataDirectory>
           <erdFile>src/main/resources/entity/postgres.edm</erdFile>
+          <extraDdlDirectory>src/main/resources/extraDdl/postgres</extraDdlDirectory>
         </configuration>
         <dependencies>
           <dependency>
