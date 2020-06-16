@@ -20,6 +20,7 @@
     <!-- gsp-dba-maven-pluginが使用するデータベース設定 -->
     <db.adminUser>postgres</db.adminUser>
     <db.user>postgres</db.user>
+    <db.host>localhost</db.host>
 
     <webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>
   </properties>
@@ -243,7 +244,7 @@
         <version>4.4.0</version>
         <configuration>
           <driver>org.postgresql.Driver</driver>
-          <url>jdbc:postgresql://localhost:5432/performance</url>
+          <url>jdbc:postgresql://${db.host}:5432/performance</url>
           <adminUser>${db.adminUser}</adminUser>
           <adminPassword>${db.adminUser}</adminPassword>
           <user>${db.user}</user>
