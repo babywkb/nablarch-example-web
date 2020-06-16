@@ -66,7 +66,7 @@
 
   <!-- ダイアレクト設定 -->
   <!-- 使用するDBに合わせてダイアレクトを設定すること -->
-  <component name="dialect" class="nablarch.core.db.dialect.H2Dialect" />
+  <component name="dialect" class="nablarch.core.db.dialect.PostgreSQLDialect" />
 
   <!-- スレッドコンテキストハンドラ -->
   <import file="nablarch/webui/threadcontext-for-webui-in-sessionstore.xml"/>
