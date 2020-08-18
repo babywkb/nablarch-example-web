@@ -172,4 +172,47 @@
     </property>
   </component>
 
+  <!-- Micrometer -->
+  <component name="disposer"
+             class="nablarch.core.repository.disposal.BasicApplicationDisposer">
+    <property name="disposableList">
+      <list>
+        <component-ref name="meterBinderListProvider" />
+      </list>
+    </property>
+  </component>
+
+<!--    <component name="meterBinderListProvider" class="nablarch.integration.micrometer.DefaultMeterBinderListProvider" />-->
+  <component name="meterBinderListProvider" class="com.nablarch.example.app.metrics.CustomMeterBinderListProvider" />
+
+    <component name="meterRegistry" class="com.nablarch.example.app.metrics.instrument.PrometheusMeterRegistryFactory">
+      <property name="meterBinderListProvider" ref="meterBinderListProvider" />
+      <property name="applicationDisposer" ref="disposer" />
+    </component>
+
+<!--  <component name="meterRegistry" class="nablarch.integration.micrometer.simple.SimpleMeterRegistryFactory">-->
+<!--    <property name="meterBinderListProvider" ref="meterBinderListProvider" />-->
+<!--    <property name="applicationDisposer" ref="disposer" />-->
+<!--  </component>-->
+
+<!--  <component name="meterRegistry" class="nablarch.integration.micrometer.logging.LoggingMeterRegistryFactory">-->
+<!--    <property name="meterBinderListProvider" ref="meterBinderListProvider" />-->
+<!--    <property name="applicationDisposer" ref="disposer" />-->
+<!--  </component>-->
+
+<!--  <component name="meterRegistry" class="nablarch.integration.micrometer.cloudwatch.CloudWatchMeterRegistryFactory">-->
+<!--      <property name="meterBinderListProvider" ref="meterBinderListProvider" />-->
+<!--      <property name="applicationDisposer" ref="disposer" />-->
+<!--  </component>-->
+
+<!--  <component name="meterRegistry" class="nablarch.integration.micrometer.datadog.DatadogMeterRegistryFactory">-->
+<!--    <property name="meterBinderListProvider" ref="meterBinderListProvider" />-->
+<!--    <property name="applicationDisposer" ref="disposer" />-->
+<!--  </component>-->
+
+<!--  <component name="meterRegistry" class="nablarch.integration.micrometer.statsd.StatsdMeterRegistryFactory">-->
+<!--    <property name="meterBinderListProvider" ref="meterBinderListProvider" />-->
+<!--    <property name="applicationDisposer" ref="disposer" />-->
+<!--  </component>-->
+
 </component-configuration>

@@ -28,6 +28,9 @@
                     <li>
                         <n:a href="/action/projectUpload">プロジェクト一括登録</n:a>
                     </li>
+                    <li>
+                        <n:a href="/action/metrics">メトリクス</n:a>
+                    </li>
                 </ul>
             </div>
         </div>

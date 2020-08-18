@@ -22,6 +22,8 @@
     <db.user>NABLARCH_EXAMPLE</db.user>
 
     <webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>
+
+    <version.micrometer>1.5.3</version.micrometer>
   </properties>
   
   <profiles>
@@ -159,7 +161,6 @@
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
       <version>3.3.1</version>
-      <scope>runtime</scope>
     </dependency>
 
     <dependency>
@@ -229,6 +230,43 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- Micrometer >>> -->
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-cloudwatch2</artifactId>
+      <version>${version.micrometer}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-prometheus</artifactId>
+      <version>${version.micrometer}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-datadog</artifactId>
+      <version>${version.micrometer}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-statsd</artifactId>
+      <version>${version.micrometer}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.nablarch.integration</groupId>
+      <artifactId>nablarch-micrometer-adaptor</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-catalina</artifactId>
+      <version>9.0.37</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- <<< Micrometer -->
   </dependencies>
 
   <build>
