@@ -224,6 +224,21 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>com.nablarch.integration</groupId>
+      <artifactId>nablarch-micrometer-adaptor</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-registry-cloudwatch2</artifactId>
+      <version>1.5.4</version>
+    </dependency>
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>netty-nio-client</artifactId>
+      <version>2.13.4</version>
+    </dependency>
+
   </dependencies>
 
   <build>

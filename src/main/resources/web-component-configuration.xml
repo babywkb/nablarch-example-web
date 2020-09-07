@@ -172,4 +172,25 @@
     </property>
   </component>
 
+
+  <component name="disposer" class="nablarch.core.repository.disposal.BasicApplicationDisposer">
+    <property name="disposableList">
+      <list>
+        <component-ref name="meterBinderListProvider" />
+      </list>
+    </property>
+  </component>
+
+  <component name="meterBinderListProvider" class="nablarch.integration.micrometer.DefaultMeterBinderListProvider" />
+
+  <component name="meterRegistry"
+             class="nablarch.integration.micrometer.cloudwatch.CloudWatchMeterRegistryFactory">
+    <property name="meterBinderListProvider" ref="meterBinderListProvider" />
+    <property name="applicationDisposer" ref="disposer" />
+
+    <property name="cloudWatchAsyncClientProvider">
+      <component class="com.nablarch.example.app.metrics.CustomCloudWatchAsyncClientProvider" />
+    </property>
+  </component>
+
 </component-configuration>
