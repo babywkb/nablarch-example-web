@@ -257,7 +257,11 @@
               <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_UPLOADFILETMPDIR>file:/var/tmp/upload</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_UPLOADFILETMPDIR>
               <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_OUTPUT>file:/var/nablarch/output</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_OUTPUT>
               <NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_FORMAT>file:/var/nablarch/format</NABLARCH_FILEPATHSETTING_BASEPATHSETTINGS_FORMAT>
+              <AWS_XRAY_TRACING_NAME>example-web</AWS_XRAY_TRACING_NAME>
               <JAVA_OPTS>-Duser.language=ja</JAVA_OPTS>
+              <JAVA_OPTS>
+                -javaagent:/usr/local/tomcat/lib/disco/disco-java-agent.jar=pluginPath=/usr/local/tomcat/lib/disco/disco-plugins
+              </JAVA_OPTS>
             </environment>
           </container>
         </configuration>
