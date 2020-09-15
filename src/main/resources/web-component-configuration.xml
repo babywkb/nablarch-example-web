@@ -6,10 +6,10 @@
 
   <!-- テーブル定義 -->
   <import file="nablarch/schema-config.xml" />
-  
+
   <!-- jsr310 -->
   <import file="JSR310.xml" />
-  
+
   <component name="dialect" class="nablarch.core.db.dialect.H2Dialect" />
 
   <!-- 環境設定ファイル -->
@@ -81,11 +81,11 @@
   <component name="dialect" class="nablarch.core.db.dialect.H2Dialect" />
 
   <component name="nablarchWebContextHandler" class="nablarch.fw.dicontainer.nablarch.NablarchWebContextHandler"/>
-  <component name="annotationAutoContainerProvider" class="nablarch.fw.dicontainer.nablarch.AnnotationAutoContainerProvider">
+  <component name="annotationAutoContainerProvider" class="com.nablarch.example.app.dicontainer.JavaConfigurationContainerProvider">
     <property name="requestContextSupplier" ref="nablarchWebContextHandler"/>
     <property name="sessionContextSupplier" ref="nablarchWebContextHandler"/>
   </component>
-  
+
   <!-- ハンドラキュー構成 -->
   <component name="webFrontController"
              class="nablarch.fw.web.servlet.WebFrontController">

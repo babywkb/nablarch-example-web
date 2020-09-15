@@ -23,7 +23,7 @@
 
     <webxml.path>src/main/webapp/WEB-INF/web.xml</webxml.path>
   </properties>
-  
+
   <profiles>
     <profile>
       <id>dev-deploy</id>
@@ -42,7 +42,7 @@
       <dependency>
         <groupId>com.nablarch.profile</groupId>
         <artifactId>nablarch-bom</artifactId>
-        <version>5u16-SNAPSHOT</version>
+        <version>5u17</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -60,7 +60,7 @@
     <dependency>
       <groupId>com.nablarch.framework</groupId>
       <artifactId>nablarch-fw-scoped-dicontainer</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>javax.inject</groupId>
@@ -77,7 +77,7 @@
       <groupId>com.nablarch.profile</groupId>
       <artifactId>nablarch-web</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>com.nablarch.framework</groupId>
       <artifactId>nablarch-fw-web</artifactId>
@@ -107,7 +107,7 @@
       <groupId>com.nablarch.framework</groupId>
       <artifactId>nablarch-core-jdbc</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>com.nablarch.integration</groupId>
       <artifactId>nablarch-jsr310-adaptor</artifactId>
@@ -154,14 +154,14 @@
       <groupId>org.apache.geronimo.specs</groupId>
       <artifactId>geronimo-jpa_2.0_spec</artifactId>
     </dependency>
-    
+
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>1.4.196</version>
       <scope>runtime</scope>
     </dependency>
-    
+
     <dependency>
       <groupId>com.zaxxer</groupId>
       <artifactId>HikariCP</artifactId>
