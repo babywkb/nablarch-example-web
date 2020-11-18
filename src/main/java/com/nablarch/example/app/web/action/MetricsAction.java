@@ -4,16 +4,46 @@ import io.micrometer.core.instrument.Measurement;
 import io.micrometer.core.instrument.Meter;
 import io.micrometer.core.instrument.simple.SimpleMeterRegistry;
 import io.micrometer.prometheus.PrometheusMeterRegistry;
+import nablarch.core.log.Logger;
+import nablarch.core.log.LoggerManager;
 import nablarch.core.repository.SystemRepository;
 import nablarch.fw.ExecutionContext;
 import nablarch.fw.web.HttpRequest;
 import nablarch.fw.web.HttpResponse;
 
 public class MetricsAction {
+    private static final Logger LOGGER = LoggerManager.get(MetricsAction.class);
+
     public HttpResponse index(HttpRequest request, ExecutionContext context) {
         String[] errors = request.getParam("error");
         if (errors != null && 0 < errors.length) {
             stackoverflow();
+        }
+
+        String[] loggings = request.getParam("logging");
+        if (loggings !=null && 0 < loggings.length) {
+            switch (loggings[0]) {
+                case "trace":
+                    LOGGER.logTrace("trace log");
+                    break;
+                case "debug":
+                    LOGGER.logDebug("debug log");
+                    break;
+                case "info":
+                    LOGGER.logInfo("info log");
+                    break;
+                case "warn":
+                    LOGGER.logWarn("warn log");
+                    break;
+                case "error":
+                    LOGGER.logError("error log");
+                    break;
+                case "fatal":
+                    LOGGER.logFatal("fatal log");
+                    break;
+                default:
+                    LOGGER.logError("unknown loggings=" + loggings[0]);
+            }
         }
 
         String metrics;
